@@ -10,7 +10,8 @@ const EditNote = () => {
   useEffect(async () => {
     if (router.query?.id) {
       const res = await fetch(
-        `http://localhost:3000/api/note/${router.query.id}`
+        process.env.BaseApi + `api/note/${router.query.id}` ||
+          `http://localhost:3000/api/note/${router.query.id}`
       );
       const { data } = await res.json();
       setNote(data);
@@ -26,7 +27,10 @@ const EditNote = () => {
         <FormNote
           note={note}
           method="PUT"
-          routeFetch={`http://localhost:3000/api/note/${router.query.id}`}
+          routeFetch={
+            process.env.BaseApi + `api/note/${router.query.id}` ||
+            `http://localhost:3000/api/note/${router.query.id}`
+          }
           title="Update Note"
           btnLabel="Update"
         />

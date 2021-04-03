@@ -61,7 +61,9 @@ const index = ({ notes }) => {
 };
 
 index.getInitialProps = async () => {
-  const res = await fetch("http://localhost:3000/api/note");
+  const res = await fetch(
+    process.env.BaseApi + `api/note/` || "http://localhost:3000/api/note"
+  );
   const { data } = await res.json();
 
   return { notes: data };
