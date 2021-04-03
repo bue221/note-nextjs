@@ -10,6 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "cors": "^2.8.5",
     "mongoose": "^5.12.3",
     "next": "10.1.2",
     "prop-types": "^15.7.2",

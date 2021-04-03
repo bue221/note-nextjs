@@ -1,9 +1,24 @@
 import { dbConnect } from "../../../backend/lib/dbConnect";
 import Note from "../../../backend/models/Note";
 
+import Cors from "cors";
+import corsInit from "../../../backend/lib/cors";
+
+// Initialize the cors middleware
+const cors = corsInit(
+  // You can read more about the available options here: https://github.com/expressjs/cors#configuration-options
+  Cors({
+    // Only allow requests with GET, POST and OPTIONS
+    methods: ["GET", "POST", "OPTIONS"],
+  })
+);
+
 dbConnect();
 
 export default async (req, res) => {
+  // Run cors
+  await cors(req, res);
+
   const {
     query: { id },
     method,
