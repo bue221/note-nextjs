@@ -8,7 +8,7 @@ const NewNote = () => {
     <FormNote
       method="POST"
       routeFetch={
-        process.env.BaseApi + "/api/note" || "http://localhost:3000/api/note"
+        process.env.BaseApi + "api/note" || "http://localhost:3000/api/note"
       }
       title="Create Note"
       btnLabel="Create"
