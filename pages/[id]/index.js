@@ -15,7 +15,7 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
-import { useStyles } from "./style";
+import useStyles from "./style";
 
 const Note = ({ note }) => {
   const router = useRouter();

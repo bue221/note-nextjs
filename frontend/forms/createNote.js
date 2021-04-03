@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@material-ui/core";
 
-import { useStyles } from "../../frontend/forms/styles";
+import useStyles from "../../frontend/forms/styles";
 
 const FormNote = ({ note, method, routeFetch, title, btnLabel }) => {
   const classes = useStyles();

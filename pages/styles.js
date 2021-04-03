@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: 275,
   },
@@ -19,3 +19,5 @@ export const useStyles = makeStyles(() => ({
     justifyContent: "center",
   },
 }));
+
+export default useStyles;

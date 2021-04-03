@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
     flexDirection: "column",
@@ -17,3 +17,5 @@ export const useStyles = makeStyles(() => ({
     gap: "1rem",
   },
 }));
+
+export default useStyles;

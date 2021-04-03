@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
     flexDirection: "column",
@@ -24,3 +24,5 @@ export const useStyles = makeStyles(() => ({
     padding: ".7rem 0",
   },
 }));
+
+export default useStyles;
