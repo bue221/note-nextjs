@@ -15,8 +15,6 @@ export default async (req, res) => {
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   });
 
-  res.header("Access-Control-Allow-Origin", "*");
-
   const { method } = req;
 
   switch (method) {
