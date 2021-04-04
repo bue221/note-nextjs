@@ -36,8 +36,9 @@ const Note = ({ note }) => {
     const noteId = router.query.id;
     try {
       const res = await fetch(
-        process.env.BaseApi + `api/note/${noteId}` ||
-          `http://localhost:3000/api/note/${noteId}`,
+        process.env.enviroment === "production"
+          ? process.env.BaseApi + `api/note/${noteId}`
+          : `http://localhost:3000/api/note/${noteId}`,
         {
           method: "Delete",
         }
@@ -111,8 +112,9 @@ const Note = ({ note }) => {
 
 Note.getInitialProps = async ({ query: { id } }) => {
   const res = await fetch(
-    process.env.BaseApi + `api/note/${id}` ||
-      `http://localhost:3000/api/note/${id}`
+    process.env.enviroment === "production"
+      ? process.env.BaseApi + `api/note/${id}`
+      : `http://localhost:3000/api/note/${id}`
   );
   const { data } = await res.json();
 

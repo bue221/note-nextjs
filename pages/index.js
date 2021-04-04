@@ -62,7 +62,9 @@ const index = ({ notes }) => {
 
 index.getInitialProps = async () => {
   const res = await fetch(
-    process.env.BaseApi + "api/note/" || "http://localhost:3000/api/note"
+    process.env.enviroment === "production"
+      ? process.env.BaseApi + "api/note/"
+      : "http://localhost:3000/api/note"
   );
   const { data } = await res.json();
 

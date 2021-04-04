@@ -10,8 +10,9 @@ const EditNote = () => {
   useEffect(async () => {
     if (router.query?.id) {
       const res = await fetch(
-        process.env.BaseApi + `api/note/${router.query.id}` ||
-          `http://localhost:3000/api/note/${router.query.id}`
+        process.env.enviroment === "production"
+          ? process.env.BaseApi + `api/note/${router.query.id}`
+          : `http://localhost:3000/api/note/${router.query.id}`
       );
       const { data } = await res.json();
       setNote(data);
@@ -28,8 +29,9 @@ const EditNote = () => {
           note={note}
           method="PUT"
           routeFetch={
-            process.env.BaseApi + `api/note/${router.query.id}` ||
-            `http://localhost:3000/api/note/${router.query.id}`
+            process.env.enviroment === "production"
+              ? process.env.BaseApi + `api/note/${router.query.id}`
+              : `http://localhost:3000/api/note/${router.query.id}`
           }
           title="Update Note"
           btnLabel="Update"
